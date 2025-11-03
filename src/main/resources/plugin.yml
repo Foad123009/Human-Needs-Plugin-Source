@@ -1,0 +1,11 @@
+name: RoleplayNeeds
+version: 1.0.0
+main: com.example.rpneeds.RoleplayNeeds
+api-version: 1.16
+author: FoadSh
+commands:
+  urine:
+    description: Pee to reduce urine level
+  pop:
+    description: Poop to reduce poop level
+depend: [PlaceholderAPI]

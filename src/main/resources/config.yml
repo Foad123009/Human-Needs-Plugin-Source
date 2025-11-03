@@ -1,0 +1,91 @@
+# ===========================
+# RoleplayNeeds Configuration
+# ===========================
+
+# Prefix that will be added in front of all plugin messages.
+# Supports Minecraft color codes with "&".
+# Example: "&6[Needs]&r " → [Needs] in gold color.
+prefix: "&6[Needs]&r "
+
+# The maximum value that needs (urine and poop) can reach.
+# When this value is reached, bad effects will happen.
+max-level: 100
+
+# How often should needs increase and by how much?
+# increase-interval: time in SECONDS between each increase.
+# increase-amount: how much the need increases every interval (in %).
+increase-interval: 60   # Every 60 seconds (1 minute)
+increase-amount: 1      # Each time, increase by 1%
+
+# Command cooldowns in MINUTES.
+# This prevents players from spamming /urine or /pop.
+cooldowns:
+  urine: 30  # /urine can be used once every 30 minutes
+  pop: 30    # /pop can be used once every 30 minutes
+
+# Effects applied when a need reaches its maximum level.
+# slowness-level: intensity of the slowness effect (higher = slower).
+# slowness-duration: duration of slowness in SECONDS.
+effects:
+  slowness-level: 1
+  slowness-duration: 60  # 1 minute of slowness
+
+# ===========================
+# Urine Settings
+# ===========================
+urine:
+  # Sound effect played when urinating.
+  # Choose any valid Minecraft sound (example: ENTITY_PLAYER_SPLASH).
+  sound: ENTITY_PLAYER_SPLASH
+
+  # Particle effect shown while urinating.
+  # DRIP_WATER looks like drops of liquid.
+  particle: DRIP_WATER
+
+  # Message shown when urination is successful.
+  message-success: "&eYou urinated!"
+
+  # Message shown if the player tries to urinate during cooldown.
+  # %time% will be replaced with the cooldown time.
+  message-cooldown: "&cYou can only urinate every %time% minutes!"
+
+# ===========================
+# Poop Settings
+# ===========================
+poop:
+  # Sound effect played when pooping.
+  # Default is a squishy sound for realism.
+  sound: ENTITY_SLIME_SQUISH
+
+  # Block placed under the player when pooping.
+  # Default is BROWN_CONCRETE, but can be any block.
+  block: BROWN_CONCRETE
+
+  # Message shown when pooping is successful.
+  message-success: "&6You pooped!"
+
+  # Message shown if the player tries to poop during cooldown.
+  # %time% will be replaced with the cooldown time.
+  message-cooldown: "&cYou can only poop every %time% minutes!"
+
+# ===========================
+# Death Message
+# ===========================
+# This is shown when BOTH needs (urine + poop) reach maximum level
+# and the player dies because they ignored their needs.
+death-message: "&cYou died because you ignored your needs!"
+
+# ===========================
+# Thirst Settings
+# ===========================
+thirst:
+  dehydration-seconds: 2400
+  dizzy-seconds: 300
+
+  drink-sound: ENTITY_GENERIC_DRINK
+  drink-particle: WATER_SPLASH
+
+  message-success: "&bYou drank clean water!"
+  message-bad-water: "&cYou drank dirty water!"
+  message-sick: "&eYou feel dizzy and sick..."
+  message-death: "&cYou died of dehydration!"
